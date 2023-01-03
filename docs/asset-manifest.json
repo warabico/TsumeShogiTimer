@@ -1,16 +1,15 @@
 {
-  "main.css": "/TsumeShogiTimer/static/css/main.e301e46f.chunk.css",
-  "main.js": "/TsumeShogiTimer/static/js/main.16785b6d.chunk.js",
-  "main.js.map": "/TsumeShogiTimer/static/js/main.16785b6d.chunk.js.map",
-  "static/js/1.3c11774c.chunk.js": "/TsumeShogiTimer/static/js/1.3c11774c.chunk.js",
-  "static/js/1.3c11774c.chunk.js.map": "/TsumeShogiTimer/static/js/1.3c11774c.chunk.js.map",
-  "static/js/2.6422faee.chunk.js": "/TsumeShogiTimer/static/js/2.6422faee.chunk.js",
-  "static/js/2.6422faee.chunk.js.map": "/TsumeShogiTimer/static/js/2.6422faee.chunk.js.map",
-  "runtime~main.js": "/TsumeShogiTimer/static/js/runtime~main.29aa1696.js",
-  "runtime~main.js.map": "/TsumeShogiTimer/static/js/runtime~main.29aa1696.js.map",
-  "static/media/logo.svg": "/TsumeShogiTimer/static/media/logo.06e73328.svg",
-  "static/css/main.e301e46f.chunk.css.map": "/TsumeShogiTimer/static/css/main.e301e46f.chunk.css.map",
-  "index.html": "/TsumeShogiTimer/index.html",
-  "precache-manifest.223f95f07c4a3136f021fdf55696a6b8.js": "/TsumeShogiTimer/precache-manifest.223f95f07c4a3136f021fdf55696a6b8.js",
-  "service-worker.js": "/TsumeShogiTimer/service-worker.js"
+  "files": {
+    "main.css": "/TsumeShogiTimer/static/css/main.073c9b0a.css",
+    "main.js": "/TsumeShogiTimer/static/js/main.4843004a.js",
+    "static/js/787.8e9e615b.chunk.js": "/TsumeShogiTimer/static/js/787.8e9e615b.chunk.js",
+    "index.html": "/TsumeShogiTimer/index.html",
+    "main.073c9b0a.css.map": "/TsumeShogiTimer/static/css/main.073c9b0a.css.map",
+    "main.4843004a.js.map": "/TsumeShogiTimer/static/js/main.4843004a.js.map",
+    "787.8e9e615b.chunk.js.map": "/TsumeShogiTimer/static/js/787.8e9e615b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.4843004a.js"
+  ]
 }
