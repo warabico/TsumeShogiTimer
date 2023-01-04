@@ -1,14 +1,17 @@
 import React from 'react';
 import { useTimer } from 'react-timer-hook';
 
-const audioUrl1 = process.env.PUBLIC_URL + '/audio/sound_tick.mp3';
-const audioUrl2 = process.env.PUBLIC_URL + '/audio/sound_end.mp3';
+const audioOKUrl = process.env.PUBLIC_URL + '/audio/sound_ok.mp3';
+const audioNGUrl = process.env.PUBLIC_URL + '/audio/sound_ng.mp3';
+const audioEndUrl = process.env.PUBLIC_URL + '/audio/sound_end.mp3';
 
 function MyTimer({ expiryTimestamp }: { expiryTimestamp: Date }) {
-  const audio1 = new Audio(audioUrl1);
-  const audio2 = new Audio(audioUrl2);
+  const [ audioOK ] = React.useState( new Audio(audioOKUrl) );
+  const [ audioNG ] = React.useState( new Audio(audioNGUrl) );
+  const [ audioEnd ] = React.useState( new Audio(audioEndUrl) );
 
   const [ restartCount, setRestartCount ] = React.useState(0);
+  const [ answerFlag, setAnswerFlag ] = React.useState( true );
 
   const {
     seconds,
@@ -23,20 +26,26 @@ function MyTimer({ expiryTimestamp }: { expiryTimestamp: Date }) {
   } = useTimer({ expiryTimestamp, autoStart: false, onExpire: () => autoRestart() });
 
   const autoRestart = () => {
-    const time = new Date();
-    time.setSeconds(time.getSeconds() + 5);
-
-    setRestartCount(restartCount + 1);
-
-    if ( restartCount < 4 )
+    if ( answerFlag == false )
     {
-      audio1.play();
-      setTimeout(() => restart(time), 0);
+      audioNG.play();
+      setRestartCount(restartCount + 1);
     }
     else
     {
-      audio2.play();
+      setAnswerFlag(false);
+    }
+
+    if ( restartCount >= 3 )
+    {
+      audioEnd.play();
       setRestartCount(0);
+    }
+    else
+    {
+      const time = new Date();
+      time.setSeconds(time.getSeconds() + 5);
+      setTimeout(() => restart(time), 10);
     }
   }
 
@@ -54,10 +63,26 @@ function MyTimer({ expiryTimestamp }: { expiryTimestamp: Date }) {
         time.setSeconds(time.getSeconds() + 5);
         pause();
       }}>Stop</button>
+
+      <button disabled={answerFlag} onClick={() => {
+        setAnswerFlag(true);
+        audioOK.play();
+        setRestartCount( restartCount + 1 );
+
+        const time = new Date();
+        time.setSeconds(time.getSeconds() - 1);
+        restart(time);
+      }}>Skip</button>
+
       <button onClick={() => {
         // Restarts to 5 minutes timer
-        audio1.play();
+        audioOK.load();
+        audioNG.load();
+        audioEnd.load();
+
+        setAnswerFlag(false);
         setRestartCount(0);
+
         const time = new Date();
         time.setSeconds(time.getSeconds() + 5);
         restart(time);
