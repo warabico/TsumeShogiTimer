@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TsumeShogiTimer/static/css/main.073c9b0a.css",
-    "main.js": "/TsumeShogiTimer/static/js/main.db0dc969.js",
+    "main.css": "/TsumeShogiTimer/static/css/main.4ddfba7c.css",
+    "main.js": "/TsumeShogiTimer/static/js/main.2168bc6d.js",
     "static/js/787.8e9e615b.chunk.js": "/TsumeShogiTimer/static/js/787.8e9e615b.chunk.js",
     "index.html": "/TsumeShogiTimer/index.html",
-    "main.073c9b0a.css.map": "/TsumeShogiTimer/static/css/main.073c9b0a.css.map",
-    "main.db0dc969.js.map": "/TsumeShogiTimer/static/js/main.db0dc969.js.map",
+    "main.4ddfba7c.css.map": "/TsumeShogiTimer/static/css/main.4ddfba7c.css.map",
+    "main.2168bc6d.js.map": "/TsumeShogiTimer/static/js/main.2168bc6d.js.map",
     "787.8e9e615b.chunk.js.map": "/TsumeShogiTimer/static/js/787.8e9e615b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.db0dc969.js"
+    "static/css/main.4ddfba7c.css",
+    "static/js/main.2168bc6d.js"
   ]
 }
