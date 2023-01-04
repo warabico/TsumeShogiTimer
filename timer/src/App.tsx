@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Timer from './useTimer';
+
+const audioUrl = process.env.PUBLIC_URL + '/audio/sound_tick.mp3';
 
 function App() {
   return (
@@ -13,5 +14,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
