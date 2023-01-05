@@ -1,5 +1,5 @@
 import React from 'react';
-const ExcelJS = require('exceljs');
+import * as ExcelJS from 'exceljs'
 import { Button, Stack } from '@mui/material';
 
 import TimerComponent from './timerComponent';
