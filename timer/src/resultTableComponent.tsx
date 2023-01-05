@@ -1,10 +1,15 @@
 import React from 'react';
 
-import { Table, TableContainer, TableHead, TableRow, TableBody, TableCell, Paper } from '@mui/material';
+import { Table, TableContainer, TableHead, TableRow, TableBody, TableCell, Paper, Button } from '@mui/material';
+
+interface CallbackChangeAnswerType {
+    (argv: number): void;
+}
 
 interface ResultTableProps {
     secondsList: number[];
     answerList: boolean[];
+    callbackChangeAnswer: CallbackChangeAnswerType
 };
 
 const ResultTableComponent = (props: ResultTableProps) => {
@@ -25,6 +30,7 @@ const ResultTableComponent = (props: ResultTableProps) => {
                             <TableCell align="center">#</TableCell>
                             <TableCell align="center">Time</TableCell>
                             <TableCell align="center">Answer</TableCell>
+                            <TableCell align="center">Change Answer</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -37,10 +43,13 @@ const ResultTableComponent = (props: ResultTableProps) => {
                                     {"#" + ( '000' + ( index + 1) ).slice(-3) }
                                 </TableCell>
                                 <TableCell align="center" sx={ props.answerList[index] ? sxAnswerOK : sxAnswerNG } >
-                                    { ( '00' + Math.floor(seconds / 60) ).slice( -2 ) + ":" + ( '00' + (seconds) ).slice( -2 )}
+                                    { ( '00' + Math.floor(seconds / 60) ).slice( -2 ) + ":" + ( '00' + (seconds) ).slice( -2 ) }
                                 </TableCell>
                                 <TableCell align="center" sx={ props.answerList[index] ? sxAnswerOK : sxAnswerNG } >
                                     { props.answerList[index] ? "OK" : "NG" }
+                                </TableCell>
+                                <TableCell align="center" >
+                                    <Button variant="outlined" onClick={() => props.callbackChangeAnswer(index)}>Change</Button>
                                 </TableCell>
                             </TableRow>
                         ))}
