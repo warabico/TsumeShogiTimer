@@ -1,5 +1,5 @@
 import React from 'react';
-import * as ExcelJS from 'exceljs'
+// import * as ExcelJS from 'exceljs';
 import { Button, Stack } from '@mui/material';
 
 import TimerComponent from './timerComponent';
@@ -79,55 +79,55 @@ const TimerManager = () => {
         setAnswerList( [] );
     }
 
-    const outputExcel = async() => {
-        const workbook = new ExcelJS.Workbook();
+    // const outputExcel = async() => {
+    //     const workbook = new ExcelJS.Workbook();
 
-        // Workbookに新しいWorksheetを追加
-        workbook.addWorksheet('result');
+    //     // Workbookに新しいWorksheetを追加
+    //     workbook.addWorksheet('result');
 
-        // ↑で追加したWorksheetを参照し変数に代入
-        const worksheet = workbook.getWorksheet('result');
-        // 列を定義
-        worksheet.columns = [
-        { header: '#', key: 'id' },
-        { header: 'time', key: 'time' },
-        { header: 'answer', key: 'answer' },
-        ];
+    //     // ↑で追加したWorksheetを参照し変数に代入
+    //     const worksheet = workbook.getWorksheet('result');
+    //     // 列を定義
+    //     worksheet.columns = [
+    //     { header: '#', key: 'id' },
+    //     { header: 'time', key: 'time' },
+    //     { header: 'answer', key: 'answer' },
+    //     ];
 
-        for (let idx = 0; idx < secondsList.length; idx++)
-        {
-            worksheet.addRow({
-                id: ( '000' + ( idx + 1) ).slice(-3),
-                time: ( '00' + Math.floor(secondsList[idx] / 60) ).slice( -2 ) + ":" + ( '00' + (secondsList[idx]) ).slice( -2 ),
-                answer: ( answerList[idx] ? "OK" : "NG" )
-            });
-        }
+    //     for (let idx = 0; idx < secondsList.length; idx++)
+    //     {
+    //         worksheet.addRow({
+    //             id: ( '000' + ( idx + 1) ).slice(-3),
+    //             time: ( '00' + Math.floor(secondsList[idx] / 60) ).slice( -2 ) + ":" + ( '00' + (secondsList[idx]) ).slice( -2 ),
+    //             answer: ( answerList[idx] ? "OK" : "NG" )
+    //         });
+    //     }
 
-        // UInt8Arrayを生成
-        const uint8Array = await workbook.xlsx.writeBuffer();
+    //     // UInt8Arrayを生成
+    //     const uint8Array = await workbook.xlsx.writeBuffer();
 
-        // filename
-        const now = new Date();
-        const filename = 
-            'tsumeshogi_' + 
-            now.getFullYear() + 
-            ('00' + (now.getMonth() + 1)).slice(-2) +
-            ('00' + (now.getDay() + 1)).slice(-2) + 
-            '_' +
-            ('00' + now.getHours()).slice(-2) +
-            ('00' + now.getMinutes()).slice(-2) +
-            '.xlsx';
+    //     // filename
+    //     const now = new Date();
+    //     const filename = 
+    //         'tsumeshogi_' + 
+    //         now.getFullYear() + 
+    //         ('00' + (now.getMonth() + 1)).slice(-2) +
+    //         ('00' + (now.getDay() + 1)).slice(-2) + 
+    //         '_' +
+    //         ('00' + now.getHours()).slice(-2) +
+    //         ('00' + now.getMinutes()).slice(-2) +
+    //         '.xlsx';
 
-        // Blob
-        const blob = new Blob([uint8Array], {type: 'application/octet-binary'});
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.click();
-        // ダウンロード後は不要なのでaタグを除去
-        a.remove();
-    }
+    //     // Blob
+    //     const blob = new Blob([uint8Array], {type: 'application/octet-binary'});
+    //     const url = window.URL.createObjectURL(blob);
+    //     const a = document.createElement('a');
+    //     a.href = url;
+    //     a.download = filename;
+    //     a.click();
+    //     // ダウンロード後は不要なのでaタグを除去
+    //     a.remove();
+    // }
 
     return (
         <>
@@ -142,9 +142,9 @@ const TimerManager = () => {
                 <Button disabled={ running } variant="contained" onClick={() => resetList()} size={"large"}  >
                     Reset
                 </Button>
-                <Button disabled={ running } variant="contained" onClick={() => outputExcel()} size={"large"}  >
+                {/* <Button disabled={ running } variant="contained" onClick={() => outputExcel()} size={"large"}  >
                     Download Excel
-                </Button>
+                </Button> */}
             </Stack>
             <Stack
                 direction={{ xs: 'column', sm: 'column', md: 'row' }}
