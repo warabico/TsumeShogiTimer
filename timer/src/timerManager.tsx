@@ -1,10 +1,10 @@
 import React from 'react';
+const ExcelJS = require('exceljs');
 import { Button, Stack } from '@mui/material';
 
 import TimerComponent from './timerComponent';
 import ResultTableComponent from './resultTableComponent';
 
-const ExcelJS = require('exceljs');
 
 interface resultType {
     idx: number;
