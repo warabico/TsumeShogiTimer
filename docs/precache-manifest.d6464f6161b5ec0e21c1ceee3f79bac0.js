@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b4b2ffa222c7bd98f034",
+    "revision": "dc743a8a2e54a3f5f5dd",
     "url": "/TsumeShogiTimer/static/css/main.1c59274e.chunk.css"
   },
   {
-    "revision": "b4b2ffa222c7bd98f034",
-    "url": "/TsumeShogiTimer/static/js/main.b4b2ffa2.chunk.js"
+    "revision": "dc743a8a2e54a3f5f5dd",
+    "url": "/TsumeShogiTimer/static/js/main.dc743a8a.chunk.js"
   },
   {
     "revision": "46c3c26490a9244cbd4e",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/TsumeShogiTimer/static/js/runtime~main.18badf48.js"
   },
   {
-    "revision": "2262341727f746af1e353c9f2d026a8e",
+    "revision": "2bd5bf87824b8a73a6f0a93d3eb94391",
     "url": "/TsumeShogiTimer/index.html"
   }
 ];

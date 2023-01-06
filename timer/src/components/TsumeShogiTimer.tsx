@@ -66,6 +66,7 @@ const TsumeShogiTimer = () => {
             default:
                 break;
         }
+        audioOK.load();
         audioOK.play();
         addResult(result);
         setRunning(false);
@@ -92,6 +93,7 @@ const TsumeShogiTimer = () => {
             default:
                 break;
         }
+        audioNG.load();
         audioNG.play();
         addResult(result);
         setRunning(false);
