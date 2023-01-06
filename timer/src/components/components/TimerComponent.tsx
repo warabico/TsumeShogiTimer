@@ -79,7 +79,7 @@ const TimerComponent = (props: TimeComponentPropsType) => {
     return (
         <>
             <Grid container spacing={2} width="90%">
-                <Grid xs={8} xsOffset={2}>
+                <Grid xs={10} xsOffset={1}>
                     <Grid container spacing={2} width="100%">
                         <Grid xs={6}>
                             <Button
