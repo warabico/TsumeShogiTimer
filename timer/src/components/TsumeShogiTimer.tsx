@@ -41,6 +41,8 @@ const TsumeShogiTimer = () => {
     const begin = () => {
         setQuizStatus4( ( prevState: QuizStatusType ) => ( { active: false, result: prevState.result } ) );
         setRunning(true);
+        audioOK.load();
+        audioNG.load();
     }
 
     const answer = (result: ResultType) => {

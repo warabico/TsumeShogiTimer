@@ -8,12 +8,9 @@ interface UseAudioPropsType
 const useAudio = ( props: UseAudioPropsType ) => {
     const [ audio ] = React.useState( new Audio( props.url ) );
 
-    React.useEffect( () => {
+    const load = () => {
         audio.load();
-        return ( () => {
-
-        } )
-    }, [] );
+    }
 
     const play = () => {
         audio.pause();
@@ -21,7 +18,7 @@ const useAudio = ( props: UseAudioPropsType ) => {
         audio.play();
     }
     
-    return { play };
+    return { play, load };
 }
 
 export default useAudio;
