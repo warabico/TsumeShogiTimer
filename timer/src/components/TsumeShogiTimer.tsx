@@ -46,6 +46,7 @@ const TsumeShogiTimer = () => {
     }
 
     const answer = (result: ResultType) => {
+        audioOK.load();
         switch (quizCount) {
             case 0:
                 setQuizStatus4( ( prevState: QuizStatusType ) => ( { active: false, result: prevState.result } ) );
@@ -66,13 +67,13 @@ const TsumeShogiTimer = () => {
             default:
                 break;
         }
-        audioOK.load();
         audioOK.play();
         addResult(result);
         setRunning(false);
     }
 
     const finish = (result: ResultType) => {
+        audioNG.load();
         switch (quizCount) {
             case 0:
                 setQuizStatus4( ( prevState: QuizStatusType ) => ( { active: false, result: prevState.result } ) );
@@ -93,7 +94,6 @@ const TsumeShogiTimer = () => {
             default:
                 break;
         }
-        audioNG.load();
         audioNG.play();
         addResult(result);
         setRunning(false);
