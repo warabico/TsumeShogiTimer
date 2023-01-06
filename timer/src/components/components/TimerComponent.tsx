@@ -69,7 +69,7 @@ const TimerComponent = (props: TimeComponentPropsType) => {
 
     const checkContinue = () => {
         if (props.continueQuiz) {
-            timerStart();
+            setTimeout( () => timerStart(), 10);
         }
         else {
             setTimerActive(false);

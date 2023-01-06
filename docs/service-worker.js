@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/TsumeShogiTimer/precache-manifest.60f791292eb93a22fe6b035e3b03c5e8.js"
+  "/TsumeShogiTimer/precache-manifest.22f03ca1cffda1824e98f5402d54f8fe.js"
 );
 
 workbox.clientsClaim();
