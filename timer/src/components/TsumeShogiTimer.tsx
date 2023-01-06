@@ -142,6 +142,7 @@ const TsumeShogiTimer = () => {
             </Grid>
             <hr style={{ width: "90%" }} />
             <TableComponent resultList={resultList} />
+            <hr style={{ width: "90%" }} />
         </>
     );
 }

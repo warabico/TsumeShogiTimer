@@ -28,8 +28,8 @@ const TableComponent = ( props: TableComponentPropsType ) => {
 
     return (
         <>
-        <TableContainer style={{width:"90%", fontSize:"16px"}} component={Paper}>
-            <Table aria-label="simple table" size="small">
+        <TableContainer sx={{ maxHeight: 400 }} style={{width:"90%", fontSize:"16px"}} component={Paper}>
+            <Table aria-label="simple table" size="small" stickyHeader>
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">#</TableCell>
