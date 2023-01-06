@@ -1,15 +1,15 @@
 {
-  "files": {
-    "main.css": "/TsumeShogiTimer/static/css/main.8567e139.css",
-    "main.js": "/TsumeShogiTimer/static/js/main.140c142e.js",
-    "static/js/787.8e9e615b.chunk.js": "/TsumeShogiTimer/static/js/787.8e9e615b.chunk.js",
-    "index.html": "/TsumeShogiTimer/index.html",
-    "main.8567e139.css.map": "/TsumeShogiTimer/static/css/main.8567e139.css.map",
-    "main.140c142e.js.map": "/TsumeShogiTimer/static/js/main.140c142e.js.map",
-    "787.8e9e615b.chunk.js.map": "/TsumeShogiTimer/static/js/787.8e9e615b.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.8567e139.css",
-    "static/js/main.140c142e.js"
-  ]
+  "main.css": "/TsumeShogiTimer/static/css/main.1c59274e.chunk.css",
+  "main.js": "/TsumeShogiTimer/static/js/main.436f817f.chunk.js",
+  "main.js.map": "/TsumeShogiTimer/static/js/main.436f817f.chunk.js.map",
+  "static/js/1.203309d7.chunk.js": "/TsumeShogiTimer/static/js/1.203309d7.chunk.js",
+  "static/js/1.203309d7.chunk.js.map": "/TsumeShogiTimer/static/js/1.203309d7.chunk.js.map",
+  "static/js/2.c5aad420.chunk.js": "/TsumeShogiTimer/static/js/2.c5aad420.chunk.js",
+  "static/js/2.c5aad420.chunk.js.map": "/TsumeShogiTimer/static/js/2.c5aad420.chunk.js.map",
+  "runtime~main.js": "/TsumeShogiTimer/static/js/runtime~main.d020cd1c.js",
+  "runtime~main.js.map": "/TsumeShogiTimer/static/js/runtime~main.d020cd1c.js.map",
+  "static/css/main.1c59274e.chunk.css.map": "/TsumeShogiTimer/static/css/main.1c59274e.chunk.css.map",
+  "index.html": "/TsumeShogiTimer/index.html",
+  "precache-manifest.126ca771f694692bc1773369383cf92f.js": "/TsumeShogiTimer/precache-manifest.126ca771f694692bc1773369383cf92f.js",
+  "service-worker.js": "/TsumeShogiTimer/service-worker.js"
 }

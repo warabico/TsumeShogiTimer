@@ -1,5 +1,4 @@
 import React from 'react';
-import { Stack } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 import useAudio from './hooks/AudioHook';
