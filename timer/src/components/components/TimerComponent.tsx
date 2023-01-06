@@ -25,9 +25,9 @@ interface TimeComponentPropsType {
 }
 
 const TimerComponent = (props: TimeComponentPropsType) => {
-    const [ timerActive, setTimerActive ] = React.useState( false );
-    const [ quizMinutes, setQuizMinutes ] = React.useState( Math.floor( props.seconds / 60 ) );
-    const [ quizSeconds, setQuizSeconds ] = React.useState( props.seconds % 60 );
+    const [timerActive, setTimerActive] = React.useState(false);
+    const [quizMinutes, setQuizMinutes] = React.useState(Math.floor(props.seconds / 60));
+    const [quizSeconds, setQuizSeconds] = React.useState(props.seconds % 60);
 
     const quizTimer = useQuizTimer({ seconds: quizSeconds, callbackOnExpire: () => timeup() });
 
@@ -36,26 +36,24 @@ const TimerComponent = (props: TimeComponentPropsType) => {
     const timerStart = () => {
         if (!quizTimer.isRunning) {
             setTimerActive(true);
-            setQuizMinutes( Math.floor( props.seconds / 60 ) );
-            setQuizSeconds( props.seconds % 60 );
+            setQuizMinutes(Math.floor(props.seconds / 60));
+            setQuizSeconds(props.seconds % 60);
             quizTimer.startQuiz();
             props.callbackOnStart();
             answerButtonRef.current.focus();
         }
-        else
-        {
+        else {
             quizTimer.startQuiz();
         }
     }
 
     const answer = () => {
-        if ( timerActive )
-        {
+        if (timerActive) {
             quizTimer.answerQuiz();
             checkContinue();
             props.callbackOnAnswer({
-                minutes: ( quizMinutes - quizTimer.minutes ),
-                seconds: ( quizSeconds - quizTimer.seconds ),
+                minutes: (quizMinutes - quizTimer.minutes),
+                seconds: (quizSeconds - quizTimer.seconds),
                 result: 1
             });
         }
@@ -70,13 +68,11 @@ const TimerComponent = (props: TimeComponentPropsType) => {
     }
 
     const checkContinue = () => {
-        if ( props.continueQuiz )
-        {
+        if (props.continueQuiz) {
             timerStart();
         }
-        else
-        {
-            setTimerActive( false );
+        else {
+            setTimerActive(false);
         }
     }
 
@@ -84,27 +80,35 @@ const TimerComponent = (props: TimeComponentPropsType) => {
         <>
             <Grid container spacing={2} width="90%">
                 <Grid xs={8} xsOffset={2}>
-                    <Stack direction="column" spacing={2}>
-                        <Button
-                            disabled={ timerActive }
-                            variant="outlined"
-                            startIcon={<TimerIcon />}
-                            onClick={() => timerStart()}
-                        >START</Button>
-                        <Button
-                            variant="outlined"
-                            startIcon={<LightbulbIcon />}
-                            onClick={() => answer()}
-                            ref={answerButtonRef}
-                        >ANSWER</Button>
-                        <TimerModule
-                            show={timerActive}
-                            active={timerActive}
-                            minutes={quizTimer.minutes}
-                            seconds={quizTimer.seconds}
-                            fontSize={'48px'}
-                        />
-                    </Stack>
+                    <Grid container spacing={2} width="100%">
+                        <Grid xs={6}>
+                            <Button
+                                fullWidth={true}
+                                disabled={timerActive}
+                                variant="outlined"
+                                startIcon={<TimerIcon />}
+                                onClick={() => timerStart()}
+                            >START</Button>
+                        </Grid>
+                        <Grid xs={6}>
+                            <Button
+                                fullWidth={true}
+                                variant="outlined"
+                                startIcon={<LightbulbIcon />}
+                                onClick={() => answer()}
+                                ref={answerButtonRef}
+                            >ANSWER</Button>
+                        </Grid>
+                        <Grid xs={12}>
+                            <TimerModule
+                                show={timerActive}
+                                active={timerActive}
+                                minutes={quizTimer.minutes}
+                                seconds={quizTimer.seconds}
+                                fontSize={'48px'}
+                            />
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </>

@@ -28,14 +28,14 @@ const TableComponent = ( props: TableComponentPropsType ) => {
 
     return (
         <>
-        <TableContainer sx={{ maxHeight: 400 }} style={{width:"90%", fontSize:"16px"}} component={Paper}>
+        <TableContainer sx={{ maxHeight: 240 }} style={{width:"90%", fontSize:"16px"}} component={Paper}>
             <Table aria-label="simple table" size="small" stickyHeader>
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">#</TableCell>
                         <TableCell align="center">Time</TableCell>
                         <TableCell align="center">Answer</TableCell>
-                        <TableCell align="center">Change Answer</TableCell>
+                        <TableCell align="center">Debug</TableCell>
                     </TableRow>
                 </TableHead>
                 { tableBody() }
