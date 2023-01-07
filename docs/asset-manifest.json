@@ -1,7 +1,7 @@
 {
   "main.css": "/TsumeShogiTimer/static/css/main.6ac26a84.chunk.css",
-  "main.js": "/TsumeShogiTimer/static/js/main.89947f4e.chunk.js",
-  "main.js.map": "/TsumeShogiTimer/static/js/main.89947f4e.chunk.js.map",
+  "main.js": "/TsumeShogiTimer/static/js/main.0281eb20.chunk.js",
+  "main.js.map": "/TsumeShogiTimer/static/js/main.0281eb20.chunk.js.map",
   "static/js/1.203309d7.chunk.js": "/TsumeShogiTimer/static/js/1.203309d7.chunk.js",
   "static/js/1.203309d7.chunk.js.map": "/TsumeShogiTimer/static/js/1.203309d7.chunk.js.map",
   "static/js/2.8d76a37d.chunk.js": "/TsumeShogiTimer/static/js/2.8d76a37d.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/TsumeShogiTimer/static/js/runtime~main.d020cd1c.js.map",
   "static/css/main.6ac26a84.chunk.css.map": "/TsumeShogiTimer/static/css/main.6ac26a84.chunk.css.map",
   "index.html": "/TsumeShogiTimer/index.html",
-  "precache-manifest.555f68bc02f79aaef252360c0fda119c.js": "/TsumeShogiTimer/precache-manifest.555f68bc02f79aaef252360c0fda119c.js",
+  "precache-manifest.29a2092f656399dc53837db2b1bd05e7.js": "/TsumeShogiTimer/precache-manifest.29a2092f656399dc53837db2b1bd05e7.js",
   "service-worker.js": "/TsumeShogiTimer/service-worker.js"
 }
