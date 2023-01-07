@@ -150,9 +150,7 @@ const TsumeShogiTimer = () => {
     // Rendering
     return (
         <>
-            <hr style={{ width: "90%" }} />
             <TimerComponent seconds={30} continueQuiz={ quizCount < 3 } callbackOnStart={begin} callbackOnTimeUp={finish} callbackOnAnswer={answer} />
-            <hr style={{ width: "90%" }} />
             <Grid container spacing={2}>
                 <Grid xs={6}>
                     <QuizComponent show={true} active={quizStatus3.active} result={quizStatus3.result} />
@@ -167,15 +165,14 @@ const TsumeShogiTimer = () => {
                     <QuizComponent show={true} active={quizStatus2.active} result={quizStatus2.result} />
                 </Grid>
             </Grid>
-            <hr style={{ width: "90%" }} />
+            <br />
             <TableComponent resultList={resultList} />
-            <hr style={{ width: "90%" }} />
+            <br />
             <Button
                 variant="contained"
                 startIcon={<DownloadIcon />}
                 onClick={ () => downloadCSV() }
             >DOWNLOAD RESULT</Button>
-            <hr style={{ width: "90%" }} />
         </>
     );
 }

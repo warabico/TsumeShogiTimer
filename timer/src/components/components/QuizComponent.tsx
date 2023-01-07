@@ -87,7 +87,7 @@ const QuizComponent = ( props: QuizComponentPropsType ) => {
                     active={props.active}
                     minutes={props.result.minutes}
                     seconds={props.result.seconds}
-                    fontSize={'16px'}
+                    fontSize={'20px'}
                 />
             </Box>
         </>
