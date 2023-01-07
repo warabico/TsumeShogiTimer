@@ -84,16 +84,17 @@ const TimerComponent = (props: TimeComponentPropsType) => {
                         <Grid xs={6}>
                             <Button
                                 fullWidth={true}
-                                disabled={timerActive}
-                                variant="outlined"
+                                size="large"
+                                variant={ timerActive ? 'outlined' : 'contained' }
                                 startIcon={<TimerIcon />}
-                                onClick={() => timerStart()}
+                                onClick={ timerActive ? () => {} : () => timerStart() }
                             >START</Button>
                         </Grid>
                         <Grid xs={6}>
                             <Button
                                 fullWidth={true}
-                                variant="outlined"
+                                size="large"
+                                variant={ timerActive ? 'contained' : 'outlined' }
                                 startIcon={<LightbulbIcon />}
                                 onClick={() => answer()}
                                 ref={answerButtonRef}

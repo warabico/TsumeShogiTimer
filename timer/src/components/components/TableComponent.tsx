@@ -32,9 +32,9 @@ const TableComponent = ( props: TableComponentPropsType ) => {
             <Table aria-label="simple table" size="small" stickyHeader>
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center">#</TableCell>
+                        <TableCell align="center">Problem</TableCell>
                         <TableCell align="center">Time</TableCell>
-                        <TableCell align="center">Answer</TableCell>
+                        <TableCell align="center">Result</TableCell>
                         <TableCell align="center">Debug</TableCell>
                     </TableRow>
                 </TableHead>

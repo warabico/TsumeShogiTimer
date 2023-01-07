@@ -1,7 +1,10 @@
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import DownloadIcon from '@mui/icons-material/Download';
+import { Button } from '@mui/material';
 
 import useAudio from './hooks/AudioHook';
+import useCSV from './hooks/CSVHook';
 import TimerComponent from './components/TimerComponent';
 import QuizComponent from './components/QuizComponent';
 import TableComponent from './components/TableComponent';
@@ -36,6 +39,9 @@ const TsumeShogiTimer = () => {
     // Audio
     const audioOK = useAudio({ url: audioOKUrl });
     const audioNG = useAudio({ url: audioNGUrl });
+
+    // CSV
+    const csv = useCSV();
 
     // Functions
     const begin = () => {
@@ -124,6 +130,23 @@ const TsumeShogiTimer = () => {
         setResultList((prevState: ResultType[]) => [...prevState, result]);
     }
 
+    const downloadCSV = () => {
+        const data = [];
+        
+        data.push([ "Problem", "Time", "Result" ]);
+
+        for (let idx = 0; idx<resultList.length; idx++)
+        {
+            const num = '#' + ( '000' + (idx + 1)).slice(-3);
+            const time = ( '00' + resultList[idx].minutes ).slice(-2) + ':' + ( '00' + resultList[idx].seconds ).slice(-2);
+            const result = resultList[idx].result === 0 ? '-' : resultList[idx].result === 1 ? 'OK' : 'NG';
+
+            data.push([ num, time, result ]);
+        }
+
+        csv.download( { data: data, filename: 'sample.csv' } );
+    }
+
     // Rendering
     return (
         <>
@@ -146,6 +169,12 @@ const TsumeShogiTimer = () => {
             </Grid>
             <hr style={{ width: "90%" }} />
             <TableComponent resultList={resultList} />
+            <hr style={{ width: "90%" }} />
+            <Button
+                variant="contained"
+                startIcon={<DownloadIcon />}
+                onClick={ () => downloadCSV() }
+            >DOWNLOAD RESULT</Button>
             <hr style={{ width: "90%" }} />
         </>
     );
